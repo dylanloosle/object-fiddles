@@ -252,9 +252,11 @@ methodCollection.logHello();
 
   //Code Here
 var MakePerson = function(name, birthday, ssn){
-    return newObject{
-
-    }
+    return {
+        firstName: name,
+        birthdate: birthday,
+        social: ssn
+    };
 
 };
 MakePerson('Dylan', '01/19/1991', "123-45-6789");
@@ -267,7 +269,15 @@ MakePerson('Dylan', '01/19/1991', "123-45-6789");
 // Create a function called MakeCard which takes in all the data it needs to make a Credit Card object and returns that object so that whenever you invoke MakeCard, you get a brand new credit card.
 
   //Code Here
-  
+  var MakeCard = function(number, fullName, expiration, cvc){
+      return {
+          ccNumber: number,
+          ccName: fullName,
+          ccExp: expiration,
+          ccCvc: cvc
+      };
+  };
+MakeCard(4465029292341234, 'MichaelDLoosle', '05/17', 539);
   
   
 //NEXT PROBLEM
@@ -281,4 +291,9 @@ MakePerson('Dylan', '01/19/1991', "123-45-6789");
 
   //Code Here
 
-
+var bindCard = function(person, creditCard){
+    var myObject = {
+        person, creditCard
+    };
+};
+bindCard(MakePerson('Dylan', '01/19/1991', '123-45-6789'), MakeCard(4465029292341234, 'MichaelDLoosle', '05/17', 539));
