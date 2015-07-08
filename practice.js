@@ -160,7 +160,7 @@ for(var key in states) {
 
 
 
-//NOT COMPLETE YET!!!
+
 var user = {
     name: 'Tyler McGinnis',
     email: null,
@@ -291,9 +291,15 @@ MakeCard(4465029292341234, 'MichaelDLoosle', '05/17', 539);
 
   //Code Here
 
+
 var bindCard = function(person, creditCard){
-    var myObject = {
-        person, creditCard
-    };
+    var myObject = {};
+    for(var key in person) {
+        myObject[key] = person[key];
+    }
+    for(var key in creditCard) {
+        myObject[key] = creditCard[key];
+    }
+    return myObject;
 };
 bindCard(MakePerson('Dylan', '01/19/1991', '123-45-6789'), MakeCard(4465029292341234, 'MichaelDLoosle', '05/17', 539));
